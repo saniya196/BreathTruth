@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreathTruth | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm custom-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">BreathTruth</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="report.html">Report Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports.html">Live Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="gap.html">The Gap</a></li>
+          <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-white">
+    <div class="container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge live-badge mb-3">LIVE · 2,847 REPORTS THIS WEEK</span>
+          <h1 class="display-4 fw-bold mb-3">
+            The air your city <br> is hiding from you.
+          </h1>
+          <p class="lead mb-4">
+            Official monitors measure clean zones. We measure where you actually live.
+            Built by citizens, for citizens, because the truth about air quality belongs to everyone.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="report.html" class="btn btn-warning btn-lg fw-semibold">+ Report Now</a>
+            <a href="about.html" class="btn btn-outline-light btn-lg fw-semibold">Learn More</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-card p-4">
+            <h4 class="fw-bold mb-3">Why BreathTruth?</h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent text-white border-secondary">Track pollution where people actually live</li>
+              <li class="list-group-item bg-transparent text-white border-secondary">Collect anonymous citizen reports</li>
+              <li class="list-group-item bg-transparent text-white border-secondary">Compare official and community reality</li>
+              <li class="list-group-item bg-transparent text-white border-secondary">Visualize trends and affected areas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="card stat-card border-0 shadow-sm">
+            <div class="card-body">
+              <h2 class="fw-bold text-danger">847</h2>
+              <p class="mb-0 text-muted">Critical zones mapped</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card stat-card border-0 shadow-sm">
+            <div class="card-body">
+              <h2 class="fw-bold text-primary">12,400+</h2>
+              <p class="mb-0 text-muted">Citizen reports</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card stat-card border-0 shadow-sm">
+            <div class="card-body">
+              <h2 class="fw-bold text-success">3x</h2>
+              <p class="mb-0 text-muted">Gap vs official data</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heatmap Preview -->
+  <section class="py-5">
+    <div class="container">
+      <div class="section-title mb-4">
+        <h2 class="fw-bold">City Air Truth Heatmap</h2>
+        <p class="text-muted">Hyderabad · Live</p>
+      </div>
+
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <div class="heatmap-grid">
+            <div class="zone critical">Patancheru Industrial</div>
+            <div class="zone danger">Sanathnagar Factory</div>
+            <div class="zone moderate">Kukatpally Rd</div>
+            <div class="zone moderate">BHEL Colony</div>
+            <div class="zone clean">Miyapur</div>
+            <div class="zone clean">Jubilee Hills</div>
+            <div class="zone moderate">Madhapur</div>
+            <div class="zone clean">Gachibowli</div>
+            <div class="zone danger">Jeedimetla</div>
+            <div class="zone danger">IDA Nacharam</div>
+            <div class="zone moderate">LB Nagar</div>
+            <div class="zone moderate">Dilsukhnagar</div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <span class="legend legend-critical">Critical AQI 300+</span>
+            <span class="legend legend-danger">Danger AQI 200+</span>
+            <span class="legend legend-moderate">Moderate AQI 150+</span>
+            <span class="legend legend-clean">Clean AQI &lt; 100</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Reports Preview -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="section-title mb-4">
+        <h2 class="fw-bold">Live Reports</h2>
+        <p class="text-muted">What citizens are reporting right now</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card report-card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="fw-bold">Patancheru Industrial Area</h5>
+              <p class="mb-2">Black smoke + difficulty breathing</p>
+              <span class="badge bg-danger">SEVERE</span>
+              <p class="small text-muted mt-3 mb-0">2 min ago</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card report-card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="fw-bold">Kukatpally Main Road</h5>
+              <p class="mb-2">Burning eyes + unusual smell</p>
+              <span class="badge bg-warning text-dark">MODERATE</span>
+              <p class="small text-muted mt-3 mb-0">7 min ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="reports.html" class="btn btn-dark">View All Reports</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="section-title mb-4">
+        <h2 class="fw-bold">Who is Breathing This?</h2>
+        <p class="text-muted">Red zone impact around the city</p>
+      </div>
+
+      <div class="row g-4 text-center">
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <h2>🏫</h2>
+              <h3 class="fw-bold">14</h3>
+              <p class="text-muted mb-0">Schools inside red zone</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <h2>🏥</h2>
+              <h3 class="fw-bold">6</h3>
+              <p class="text-muted mb-0">Hospitals inside red zone</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <h2>🧓</h2>
+              <h3 class="fw-bold">3</h3>
+              <p class="text-muted mb-0">Old age homes affected</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <h2>👶</h2>
+              <h3 class="fw-bold">47,000+</h3>
+              <p class="text-muted mb-0">Children under 10 exposed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 footer-dark">
+    <div class="container text-center">
+      <p class="mb-1 fw-semibold">BreathTruth</p>
+      <p class="mb-0 small text-light-emphasis">
+        Community-driven air quality awareness platform
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
