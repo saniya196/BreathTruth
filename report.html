@@ -3,147 +3,275 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BreathTruth | Report Pollution</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <title>BreathTruth - Report Air Quality</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm custom-navbar">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">BreathTruth</a>
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-wind"></i> BreathTruth
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+        <i class="bi bi-list"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="report.html">Report Now</a></li>
+          <li class="nav-item"><a class="nav-link active" href="report.html">Report</a></li>
           <li class="nav-item"><a class="nav-link" href="reports.html">Live Reports</a></li>
-          <li class="nav-item"><a class="nav-link" href="gap.html">The Gap</a></li>
-          <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link" href="gap.html">Gap Analysis</a></li>
+          <li class="nav-item"><a class="nav-link" href="timeline.html">Trends</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="page-header">
-    <div class="container py-5">
-      <h1 class="fw-bold">Report Your Air</h1>
-      <p class="lead mb-0">Submit an anonymous pollution report from your area.</p>
+  <!-- PAGE HEADER -->
+  <section class="bg-light py-5" style="border-bottom: 1px solid var(--gray-200);">
+    <div class="container">
+      <h1 class="mb-2">Share Your Air Quality Report</h1>
+      <p class="text-muted mb-0">Your observations help us understand air quality in real-time. All reports are valuable.</p>
     </div>
   </section>
 
+  <!-- REPORT FORM SECTION -->
   <section class="py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
+          <!-- Form Card -->
+          <div class="card border-0 shadow-md">
+            <div class="card-body p-8">
               <form id="reportForm" novalidate>
 
-                <div class="mb-3">
-                  <label for="name" class="form-label fw-semibold">Name</label>
-                  <input type="text" id="name" class="form-control" placeholder="Enter your name or leave blank for anonymous">
-                  <div class="error-message" id="nameError"></div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="email" class="form-label fw-semibold">Email</label>
-                  <input type="email" id="email" class="form-control" placeholder="Enter email (optional)">
-                  <div class="error-message" id="emailError"></div>
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label fw-semibold">Symptoms Experienced</label>
-                  <div class="row">
+                <!-- SECTION 1: REPORTER INFO (Optional) -->
+                <div class="mb-8">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-6);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</div>
+                    <h4 class="mb-0">Your Information (Optional)</h4>
+                  </div>
+                  
+                  <div class="row g-4">
                     <div class="col-md-6">
-                      <div class="form-check">
-                        <input class="form-check-input symptom" type="checkbox" value="Burning Eyes" id="burningEyes">
-                        <label class="form-check-label" for="burningEyes">Burning Eyes</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input symptom" type="checkbox" value="Difficulty Breathing" id="difficultyBreathing">
-                        <label class="form-check-label" for="difficultyBreathing">Difficulty Breathing</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input symptom" type="checkbox" value="Unusual Smell" id="unusualSmell">
-                        <label class="form-check-label" for="unusualSmell">Unusual Smell</label>
+                      <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Leave blank to stay anonymous" autocomplete="name" aria-describedby="nameError">
+                        <div class="invalid-feedback" id="nameError" role="alert"></div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="form-check">
-                        <input class="form-check-input symptom" type="checkbox" value="Visible Haze" id="visibleHaze">
-                        <label class="form-check-label" for="visibleHaze">Visible Haze</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input symptom" type="checkbox" value="Headache" id="headache">
-                        <label class="form-check-label" for="headache">Headache</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input symptom" type="checkbox" value="Black Smoke" id="blackSmoke">
-                        <label class="form-check-label" for="blackSmoke">Black Smoke</label>
+                      <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="(Optional)" autocomplete="email" inputmode="email" aria-describedby="emailError">
+                        <div class="invalid-feedback" id="emailError" role="alert"></div>
                       </div>
                     </div>
                   </div>
-                  <div class="error-message" id="symptomError"></div>
                 </div>
 
-                <div class="mb-3">
-                  <label for="severity" class="form-label fw-semibold">Severity</label>
-                  <select id="severity" class="form-select">
-                    <option value="">Select Severity</option>
-                    <option value="Mild">Mild</option>
-                    <option value="Moderate">Moderate</option>
-                    <option value="Severe">Severe</option>
-                  </select>
-                  <div class="error-message" id="severityError"></div>
+                <!-- SECTION 2: SYMPTOMS -->
+                <div class="mb-8">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-6);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</div>
+                    <h4 class="mb-0">Symptoms Experienced</h4>
+                  </div>
+
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="chip" style="display: flex;">
+                        <input class="form-check-input symptom" type="checkbox" value="Burning Eyes" id="burningEyes">
+                        <span><i class="bi bi-exclamation-circle" style="margin-right: 0.5rem;"></i> Burning Eyes</span>
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="chip" style="display: flex;">
+                        <input class="form-check-input symptom" type="checkbox" value="Difficulty Breathing" id="difficultyBreathing">
+                        <span><i class="bi bi-heart" style="margin-right: 0.5rem;"></i> Difficulty Breathing</span>
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="chip" style="display: flex;">
+                        <input class="form-check-input symptom" type="checkbox" value="Unusual Smell" id="unusualSmell">
+                        <span><i class="bi bi-nosocial" style="margin-right: 0.5rem;"></i> Unusual Smell</span>
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="chip" style="display: flex;">
+                        <input class="form-check-input symptom" type="checkbox" value="Visible Haze" id="visibleHaze">
+                        <span><i class="bi bi-cloud-haze" style="margin-right: 0.5rem;"></i> Visible Haze</span>
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="chip" style="display: flex;">
+                        <input class="form-check-input symptom" type="checkbox" value="Headache" id="headache">
+                        <span><i class="bi bi-bandaid" style="margin-right: 0.5rem;"></i> Headache</span>
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="chip" style="display: flex;">
+                        <input class="form-check-input symptom" type="checkbox" value="Black Smoke" id="blackSmoke">
+                        <span><i class="bi bi-fire" style="margin-right: 0.5rem;"></i> Black Smoke</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback d-block" id="symptomError" role="alert"></div>
                 </div>
 
-                <div class="mb-3">
-                  <label for="location" class="form-label fw-semibold">Location / Area</label>
-                  <input type="text" id="location" class="form-control" placeholder="Enter your area (e.g. Patancheru, Madhapur)">
-                  <div class="error-message" id="locationError"></div>
+                <!-- SECTION 3: SEVERITY -->
+                <div class="mb-8">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-6);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">3</div>
+                    <h4 class="mb-0">Severity Level</h4>
+                  </div>
+
+                  <div class="form-group">
+                    <select id="severity" class="form-select" aria-describedby="severityError" required>
+                      <option value="">Select Severity Level</option>
+                      <option value="Mild">Mild</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="Severe">Severe</option>
+                    </select>
+                    <div class="invalid-feedback" id="severityError" role="alert"></div>
+                  </div>
                 </div>
 
-                <div class="mb-3">
-                  <label for="pincode" class="form-label fw-semibold">Pincode</label>
-                  <input type="text" id="pincode" class="form-control" placeholder="Enter 6-digit pincode">
-                  <div class="error-message" id="pincodeError"></div>
+                <!-- SECTION 4: LOCATION -->
+                <div class="mb-8">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-6);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">4</div>
+                    <h4 class="mb-0">Location & Details</h4>
+                  </div>
+
+                  <div class="row g-4">
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="location" class="form-label">Area / Location</label>
+                        <input type="text" id="location" class="form-control" placeholder="e.g., Patancheru Industrial, Miyapur" aria-describedby="locationError" required>
+                        <div class="invalid-feedback" id="locationError" role="alert"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <input type="text" id="pincode" class="form-control" placeholder="6 digits" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" aria-describedby="pincodeError" required>
+                        <div class="invalid-feedback" id="pincodeError" role="alert"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="mb-3">
-                  <label for="description" class="form-label fw-semibold">Description</label>
-                  <textarea id="description" rows="4" class="form-control" placeholder="Describe what you observed"></textarea>
-                  <div class="error-message" id="descriptionError"></div>
+                <!-- SECTION 5: DESCRIPTION -->
+                <div class="mb-8">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-6);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">5</div>
+                    <h4 class="mb-0">Detailed Observation</h4>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="description" class="form-label">What did you observe?</label>
+                    <textarea id="description" rows="5" class="form-control" placeholder="Describe the smell, visibility, time of observation, cause if known, impact on activities..." minlength="10" maxlength="250" aria-describedby="descriptionError" required></textarea>
+                    <div style="display: flex; justify-content: between; align-items: center;">
+                      <div class="invalid-feedback" id="descriptionError" role="alert"></div>
+                      <small id="descriptionCounter" class="text-muted" aria-live="polite" style="text-align: right; flex: 1;">0 / 250</small>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" id="terms">
-                  <label class="form-check-label" for="terms">
-                    I confirm that the information provided is true to the best of my knowledge.
+                <!-- TERMS & SUBMIT -->
+                <div class="form-group mb-0">
+                  <label class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terms" aria-describedby="termsError" required>
+                    <span class="form-check-label">I confirm this report is accurate to the best of my knowledge</span>
                   </label>
-                  <div class="error-message" id="termsError"></div>
+                  <div class="invalid-feedback" id="termsError" role="alert"></div>
                 </div>
 
-                <button type="submit" class="btn btn-warning w-100 fw-semibold">
-                  Submit Anonymous Report
-                </button>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                  <button type="submit" class="btn btn-lg btn-primary flex-grow-1">
+                    <i class="bi bi-check-circle"></i> Submit Report
+                  </button>
+                  <a href="reports.html" class="btn btn-lg btn-outline-primary flex-grow-1">
+                    <i class="bi bi-eye"></i> View Live Reports
+                  </a>
+                </div>
 
-                <div id="successMessage" class="success-message mt-3"></div>
+                <div id="successMessage" class="alert alert-success mt-4" role="status" aria-live="polite" style="display: none;"></div>
               </form>
+            </div>
+          </div>
+
+          <!-- Info Cards Below Form -->
+          <div class="row g-4 mt-4">
+            <div class="col-md-6">
+              <div class="card border-0 bg-light">
+                <div class="card-body">
+                  <div style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;">
+                    <i class="bi bi-shield-lock"></i>
+                  </div>
+                  <h6>Your Privacy</h6>
+                  <p class="card-text small">Reports are anonymous by default. Your personal info is never disclosed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 bg-light">
+                <div class="card-body">
+                  <div style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;">
+                    <i class="bi bi-globe"></i>
+                  </div>
+                  <h6>Make Impact</h6>
+                  <p class="card-text small">Your data contributes to our community-driven air quality map.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>BreathTruth</h4>
+          <p style="color: var(--gray-300); font-size: 0.875rem;">Citizen-powered air quality platform.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="report.html">Report</a></li>
+            <li><a href="reports.html">Live Reports</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="gap.html">Gap Analysis</a></li>
+            <li><a href="timeline.html">Trends</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 BreathTruth. Empowering citizens through transparent air quality data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
   </section>
 
   <footer class="py-4 footer-dark">
